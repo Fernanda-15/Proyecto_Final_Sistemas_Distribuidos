@@ -54,6 +54,7 @@
           { headers: {'Accept': 'application/json'}})
           .then((response) => response.json())
           .then((items) => {
+            console.log("LIBROS",items);
             this.books = items;
           })
           .catch((error) => console.error(error));
