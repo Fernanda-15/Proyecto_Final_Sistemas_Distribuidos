@@ -32,6 +32,7 @@
        <router-link class="button button-primary" 
          to="/book/create">New</router-link>
      </div>
+     <button class="button button-success" v-on:click="handleSuccess">Success</button>
     </div>
   </template>
   
@@ -67,7 +68,12 @@
               this.allBooks();
             }
           )
-       }
+       },
+       handleSuccess() {
+      // Lógica para manejar el clic en el botón "Success"
+      console.log('Botón "Success" clickeado');
+      // Puedes agregar lógica adicional aquí según tus necesidades
+        }
     }
   };
   </script>
