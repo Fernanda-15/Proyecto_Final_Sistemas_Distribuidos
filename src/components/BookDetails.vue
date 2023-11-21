@@ -96,7 +96,7 @@
         )
       },
       createBook: function() {
-        fetch(this.url+'/.netlify/functions/bookInsert',
+        fetch(this.url+'/.netlify/functions/movieInsert',
           { headers: {'Content-Type':'application/json'},
             method: 'POST',
             body: JSON.stringify(this.book)})
