@@ -1,0 +1,6 @@
+{
+    "name": "redisDB-project",
+    "dependencies": {
+      "ioredis": "latest"
+    }
+  }
