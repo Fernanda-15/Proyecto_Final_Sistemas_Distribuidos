@@ -1,6 +1,9 @@
 {
-    "name": "redisDB-project",
-    "dependencies": {
-      "ioredis": "latest"
-    }
+  "name": "redisDB-project",
+  "dependencies": {
+    "ioredis": "latest"
+  },
+  "scripts": {
+    "build": "echo 'Netlify build script placeholder'"
   }
+}
