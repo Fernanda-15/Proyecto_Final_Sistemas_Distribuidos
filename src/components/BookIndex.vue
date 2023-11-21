@@ -50,7 +50,7 @@
     },
     methods: {
       allBooks() {
-        fetch(this.url+'/.netlify/functions/bookFindAll',
+        fetch(this.url+'/netlify/functions/bookFindAll',
           { headers: {'Accept': 'application/json'}})
           .then((response) => response.json())
           .then((items) => {
