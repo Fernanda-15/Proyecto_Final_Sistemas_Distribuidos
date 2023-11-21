@@ -70,9 +70,12 @@
           )
        },
        handleSuccess() {
-      // Lógica para manejar el clic en el botón "Success"
+     
       console.log('Botón "Success" clickeado');
-      // Puedes agregar lógica adicional aquí según tus necesidades
+      fetch(this.url+'/.netlify/functions/dbCreate',
+          { headers: {'Accept': 'application/json'}})
+          .then((response) => response.json())
+          .catch((error) => console.error(error));
         }
     }
   };
