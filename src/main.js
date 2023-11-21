@@ -7,6 +7,6 @@ import './assets/css/skeleton.css';
 
 const app = createApp(App);
   
-app.config.globalProperties.url = 'https://idyllic-lily-b6108b.netlify.app/';
+app.config.globalProperties.url = 'https://proyecto-final-sistemas-distribuidos.netlify.app';
 
 app.use(router).mount("#app");
