@@ -3,10 +3,6 @@
 const redis = require('./redisDB');
 const headers = require('./headersCORS');
 
-function toJson(item, index, arr) {
-  arr[index] = JSON.parse(item);
-}
-
 exports.handler = async (event, context) => {
 
   if (event.httpMethod == "OPTIONS") {
@@ -15,20 +11,18 @@ exports.handler = async (event, context) => {
 
   try {
     
-    const id = event.path.split("/").reverse()[0];
-    
     redis.on("connect", function() {
       console.log("You are now connected");
     });
+    
+    const id = event.path.split("/").reverse()[0];
 
-   const book = await redis.get('book_'+id);
-   let books = [];
-   books.push(book);
-   books.forEach(toJson);
+    await redis.del('movie_'+id);
+    await redis.decr('movie_N');
 
-    return { statusCode: 200, headers, body: JSON.stringify(books)};
+    return { statusCode: 200, headers, body: 'OK'};
   } catch (error) {
     console.log(error);
-    return { statusCode: 400, headers, body: JSON.stringify(error) };
+    return { statusCode: 422, headers, body: JSON.stringify(error) };
   }
 };

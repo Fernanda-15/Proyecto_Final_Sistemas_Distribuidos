@@ -20,16 +20,16 @@ exports.handler = async (event, context) => {
     });
    
    let keys = [];
-   let n = await redis.get('book_N');
+   let n = await redis.get('movie_N');
 
    for(let i = 1; i<=n; i++)
-     keys.push('book_'+i);
+     keys.push('movie_'+i);
 
-   const books = await redis.mget(keys);
+   const movies = await redis.mget(keys);
  
-   books.forEach(toJson);
+   movies.forEach(toJson);
 
-    return { statusCode: 200, headers, body: JSON.stringify(books)};
+    return { statusCode: 200, headers, body: JSON.stringify(movies)};
   } catch (error) {
     console.log(error);
     return { statusCode: 400, headers, body: JSON.stringify(error) };
