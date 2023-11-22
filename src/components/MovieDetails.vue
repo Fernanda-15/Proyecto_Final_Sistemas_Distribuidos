@@ -58,6 +58,7 @@
           movie: {},
           director: [],
           estudio: [],
+          movie_n: 0
         }
       },
       mounted() {
@@ -66,9 +67,18 @@
         if (route.params.id != null)
           this.findMovie(route.params.id);
         else {
-          this.movie = {
-            'id': 'movie_'+Math.floor(Math.random()*100000000),'title':'','sinopsis':'',
-            'director':0,'estudio':0,'image':'','ano_lanzamiento':0};
+          fetch(this.url+'/.netlify/functions/getMovieN', {
+              method: 'GET',
+              headers: { 'Accept': 'application/json' }
+          })
+              .then((response) => response.json())
+              .then((result) => {
+                  this.movie_n = this.movie_n = +result.movie_N + 1;
+                  this.movie = {
+                  'id': 'movie_'+this.movie_n,'title':'','sinopsis':'',
+                  'director':0,'estudio':0,'image':'','ano_lanzamiento':0};
+              });
+          
         }
       },
       methods: {
@@ -122,6 +132,7 @@
               .then((result) => {
                   this.estudio = result;
               });
+
         }
       }
     };
