@@ -4,16 +4,16 @@
         <router-link class="three columns button button-primary" 
           to="/">Home</router-link>
         <router-link class="three columns button button-primary" 
-          to="/book">Books</router-link>
+          to="/movie">Peliculas</router-link>
         <router-link class="three columns button button-primary" 
-          to="/author">Authors</router-link>
+          to="/director">Directores</router-link>
         <router-link class="three columns button button-primary" 
-          to="/publisher">Publishers</router-link>
+          to="/studio">Estudios</router-link>
       </div>
      <router-view />
       <div class="row">
         <button disabled="disabled" class="twelve columns button-primary">
-          Copyright (c) 2022 - Armando Arce-Orozco
+          Copyright (c) 2022 - Maria Fernanda Quesada Pineda
         </button>
       </div>
     </div>
