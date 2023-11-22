@@ -50,11 +50,11 @@
     import { useRoute } from 'vue-router'
     
     export default {
-      name: "Detalles Pelicula",
+      name: "Datos de la Pelicula",
       props: ['show','edit','create'],
       data() {
         return {
-          title: "Detalles de la pelicula",
+          title: "Datos de la pelicula",
           movie: {},
           director: [],
           estudio: [],
