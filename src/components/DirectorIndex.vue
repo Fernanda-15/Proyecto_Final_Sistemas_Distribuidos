@@ -45,7 +45,7 @@ export default {
           { headers: {'Accept': 'application/json'}})
           .then((response) => response.json())
           .then((items) => {
-            this.movies = items;
+            this.directores = items;
           })
           .catch((error) => console.error(error));
        },
