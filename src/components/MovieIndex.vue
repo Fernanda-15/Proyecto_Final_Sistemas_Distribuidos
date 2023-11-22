@@ -53,7 +53,31 @@
           { headers: {'Accept': 'application/json'}})
           .then((response) => response.json())
           .then((items) => {
-            this.movies = items;
+            this.movies = items.filter(movie => movie !== null);
+            const promiseDirector = this.movies.map((movie) =>
+                        fetch(this.url+'/.netlify/functions/directorFind/' + movie.director, {
+                            method: 'GET',
+                            headers: { 'Accept': 'application/json' }
+                        })
+                            .then((response) => response.json())
+                            .then((directorResult) => {
+                                movie.director = directorResult[0].nombre;
+
+                            })
+                    );
+                    const promiseStudio = this.movies.map((movie) =>
+                        fetch(this.url+'/.netlify/functions/studioFind/' + movie.estudio, {
+                            method: 'GET',
+                            headers: { 'Accept': 'application/json' }
+                        })
+                            .then((response) => response.json())
+                            .then((studioResult) => {
+                                movie.estudio = studioResult[0].nombre;
+
+                            })
+                    );
+
+                    return Promise.all([promiseDirector, promiseStudio]);
           })
           .catch((error) => console.error(error));
        },

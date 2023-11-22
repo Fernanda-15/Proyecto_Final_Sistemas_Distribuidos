@@ -1,6 +1,6 @@
 <template>
     <div>
-      <h2 style="margin-top: 15px">Catalogo de peliculas</h2>
+      <h2 style="margin-top: 15px">Catalogo de peliculas animadas</h2>
         <p>Proyecto Final del curso Sistemas Distribuidos</p>
         <p>Estudiante: Maria Fernanda Quesada Pineda</p>
       <ul>
