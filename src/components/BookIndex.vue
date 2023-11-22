@@ -72,7 +72,7 @@
        handleSuccess() {
      
       console.log('Botón "Success" clickeado');
-      fetch(this.url+'/.netlify/functions/dbCreateStudio',
+      fetch(this.url+'/.netlify/functions/dbCreateDirector',
           { headers: {'Accept': 'application/json'}})
           .then((response) => response.json())
           .catch((error) => console.error(error));
