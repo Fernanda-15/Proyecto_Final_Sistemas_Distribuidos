@@ -1,4 +1,3 @@
-<!-- BookDetails.vue -->
 <template>
     <div class="row">
      <div class="eleven column" style="margin-top: 5%">
