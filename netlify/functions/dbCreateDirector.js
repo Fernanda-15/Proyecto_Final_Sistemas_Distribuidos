@@ -25,7 +25,7 @@ const director = [
   {
       "id": 3,
       "nombre": "Genndy Tartakovsky",
-      "origen": "",
+      "origen": "USA",
       "nacimiento": 1966,
       "image": "genndyTartakovsky.jpg"
   },
