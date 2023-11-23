@@ -27,15 +27,15 @@
                         </select>
                     </div>
                 </div>
-                <div class="row">
-                    <div class="six columns">
-                        <label for="imagenInput">Imagen</label>
-                        <input type="file" ref="fileInput" name="image" accept="image/*">
-                    </div>
+                <div class="row">                  
                     <div class="six columns" style="margin-bottom: 2%;">
                         <label for="lanzamientoInput">Año de lanzamiento</label>
                         <input class="u-full-width" type="tel" v-model="movie.ano_lanzamiento">
                     </div>
+                    <div class="six columns" style="display: flex; flex-direction: column; align-items: center; justify-content: center;">      
+                    <img :src="'/assets/images/' + movie.img" width="200" height="300" style="border-radius: 10px;" >            
+                    <input type="file" ref="fileInput" name="image" accept="image/*" style="margin-top: 3%">
+                  </div>
                     <router-link class="button button-primary" to="/movie">Back</router-link>
                     <a v-if='edit' class="button button-primary" style="float: right" v-on:click="updateMovie(movie.id)">Update</a>
                     <a v-if='create' class="button button-primary" style="float: right"

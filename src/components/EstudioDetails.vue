@@ -16,12 +16,12 @@
             <label for="fundacionInput">Año de fundación</label>
             <input class="u-full-width" type="text" v-model="estudio.fundacion">
           </div>
-          <div class="six columns">
-            <label for="imagenInput">Imagen</label>
-            <img :src="'/assets/images/' + estudio.image">
+          <div class="six columns" style="display: flex; flex-direction: column; align-items: center; justify-content: center;">      
+            <img :src="'/assets/images/' + estudio.image" width="300" height="200" style="border-radius: 10px;" >            
+            <input type="file" ref="fileInput" name="image" accept="image/*" style="margin-top: 3%">
           </div>
         </div>
-        <div class="row">
+        <div class="row" style="margin-top: 2%">
           <router-link class="button button-primary" to="/studio">Back</router-link>
           <a v-if='edit' class="button button-primary" style="float: right" v-on:click="updateEstudio(estudio.id)">Update</a>
           <a v-if='create' class="button button-primary" style="float: right" v-on:click="createEstudio()">Create</a>
@@ -58,7 +58,7 @@ export default {
           this.estudio_n = +result.studio_N + 1;
           this.estudio = {
             'id': this.estudio_n, 'nombre': '', 'ubicacion': '',
-            'fundacion': 0};
+            'fundacion': 0, 'image':'estudio_defecto.jpg'};
         });
 
     }

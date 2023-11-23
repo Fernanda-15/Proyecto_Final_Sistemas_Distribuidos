@@ -16,9 +16,9 @@
             <label for="nacimientoInput">Año de Nacimiento</label>
             <input class="u-full-width" type="text" id="nacimiento" v-model="director.nacimiento" />
           </div>
-          <div class="six columns">
-            <label for="imagenInput">Imagen</label>
-            <input type="file" ref="fileInput" name="image" accept="image/*">
+          <div class="six columns" style="display: flex; flex-direction: column; align-items: center; justify-content: center;">      
+            <img :src="'/assets/images/' + director.image" width="350" height="350" style="border-radius: 10px;" >            
+            <input type="file" ref="fileInput" name="image" accept="image/*" style="margin-top: 3%">
           </div>
         </div>
         <div class="row">
@@ -58,7 +58,7 @@ export default {
           this.director_n = +result.director_N + 1;
           this.director = {
             'id':this.director_n, 'nombre': '', 'origen': '',
-            'nacimiento': 0};
+            'nacimiento': 0, 'image':'director_defecto.jpg'};
         });
 
     }

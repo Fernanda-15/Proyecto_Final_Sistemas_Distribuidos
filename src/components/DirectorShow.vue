@@ -46,7 +46,6 @@
             <img :src="'/assets/images/' + director.image" width="350" height="350" alt="Imagen del director" class="imagen-director"> 
           </div>
         </div>
-
         <router-link class="button button-primary" to="/director">Back</router-link>
       </form>
     </div>

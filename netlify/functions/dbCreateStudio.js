@@ -41,7 +41,7 @@ const studios = [
       "nombre": "Sony Pictures Animation",
       "ubicacion": "Culver City, California",
       "fundacion": 2002,
-      "image": "spny.jpg"
+      "image": "sony.jpg"
   },
   {
       "id": 6,
