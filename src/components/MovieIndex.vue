@@ -30,7 +30,6 @@
                 </tbody>
             </table>
         </div>
-     <button class="button button-success" v-on:click="handleSuccess">Success</button>
     </div>
   </template>
   
@@ -89,15 +88,7 @@
               this.allMovies();
             }
           )
-       },
-       handleSuccess() {
-     
-      console.log('Botón "Success" clickeado');
-      fetch(this.url+'/.netlify/functions/dbCreateDirector',
-          { headers: {'Accept': 'application/json'}})
-          .then((response) => response.json())
-          .catch((error) => console.error(error));
-        }
+       }
     }
   };
   </script>
