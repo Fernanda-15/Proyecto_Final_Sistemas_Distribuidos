@@ -28,11 +28,11 @@
                     </div>
                 </div>
                 <div class="row">
-                    <div class="seven columns">
+                    <div class="six columns">
                         <label for="imagenInput">Imagen</label>
                         <input type="file" ref="fileInput" name="image" accept="image/*">
                     </div>
-                    <div class="five columns" style="margin-bottom: 2%;">
+                    <div class="six columns" style="margin-bottom: 2%;">
                         <label for="lanzamientoInput">Año de lanzamiento</label>
                         <input class="u-full-width" type="tel" v-model="movie.ano_lanzamiento">
                     </div>
@@ -76,7 +76,7 @@
                   this.movie_n = +result.movie_N + 1;
                   this.movie = {
                   'id': this.movie_n,'title':'','sinopsis':'',
-                  'director':0,'estudio':0,'image':'movie_defecto.jpg','ano_lanzamiento':0};
+                  'director':0,'estudio':0,'img':'movie_defecto.jpg','ano_lanzamiento':0};
               });
           
         }

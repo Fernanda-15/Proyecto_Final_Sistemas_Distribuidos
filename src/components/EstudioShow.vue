@@ -1,6 +1,6 @@
 <template>
-  <div class="row">
-    <div class="eleven column" style="margin-top: 5%">
+  <div class="row" style="margin-top: 5%">
+    <div class="seven columns" >
       <h2>{{ title }}</h2>
       <form>
         <div class="row">
@@ -15,15 +15,14 @@
           <div class="six columns">
             <label for="fundacionInput">Año de fundación</label>
             <input class="u-full-width" type="text" v-model="estudio.fundacion" readonly>
-          </div>
-          <div class="six columns">
-            <label for="imagenInput">Imagen</label>
-            <img :src="'/assets/images/' + estudio.image">
-          </div>
+          </div>          
         </div>
 
         <router-link class="button button-primary" to="/studio">Back</router-link>
       </form>
+    </div>
+    <div class="five columns" style="display: flex; align-items: center; justify-content: center; margin-top: 5%">
+      <img :src="'/assets/images/' + estudio.image" style="border-radius: 10px;" width="300" height="200">
     </div>
   </div>
 </template>

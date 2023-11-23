@@ -16,7 +16,7 @@
             <label for="nacimientoInput">Año de Nacimiento</label>
             <input class="u-full-width" type="text" id="nacimiento" v-model="director.nacimiento" />
           </div>
-          <div class="seven columns">
+          <div class="six columns">
             <label for="imagenInput">Imagen</label>
             <input type="file" ref="fileInput" name="image" accept="image/*">
           </div>
@@ -57,7 +57,7 @@ export default {
         .then((result) => {
           this.director_n = +result.director_N + 1;
           this.director = {
-            'id': 'director_' + this.director_n, 'nombre': '', 'origen': '',
+            'id':this.director_n, 'nombre': '', 'origen': '',
             'nacimiento': 0};
         });
 

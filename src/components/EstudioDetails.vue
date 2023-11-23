@@ -57,7 +57,7 @@ export default {
         .then((result) => {
           this.estudio_n = +result.studio_N + 1;
           this.estudio = {
-            'id': 'studio_' + this.estudio_n, 'nombre': '', 'ubicacion': '',
+            'id': this.estudio_n, 'nombre': '', 'ubicacion': '',
             'fundacion': 0};
         });
 

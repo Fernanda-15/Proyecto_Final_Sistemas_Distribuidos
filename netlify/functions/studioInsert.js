@@ -21,7 +21,7 @@ exports.handler = async (event, context) => {
    
    const data = JSON.parse(event.body);
 
-   await redis.set(data.id,event.body);
+   await redis.set('studio_'+data.id,event.body);
    await redis.incr('studio_N');
     
    return { statusCode: 200, headers, body: 'OK'};
