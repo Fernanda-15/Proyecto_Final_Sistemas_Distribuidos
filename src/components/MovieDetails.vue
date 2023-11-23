@@ -75,8 +75,8 @@
               .then((result) => {
                   this.movie_n = +result.movie_N + 1;
                   this.movie = {
-                  'id': 'movie_'+this.movie_n,'title':'','sinopsis':'',
-                  'director':0,'estudio':0,'image':'','ano_lanzamiento':0};
+                  'id': this.movie_n,'title':'','sinopsis':'',
+                  'director':0,'estudio':0,'image':'movie_defecto.jpg','ano_lanzamiento':0};
               });
           
         }
@@ -121,7 +121,7 @@
           })
               .then((response) => response.json())
               .then((result) => {
-                  this.director = result;
+                this.director = result.filter(director => director !== null);                  
               });
   
           fetch(this.url+'/.netlify/functions/studioFindAll', {
@@ -130,7 +130,7 @@
           })
               .then((response) => response.json())
               .then((result) => {
-                  this.estudio = result;
+                this.estudio = result.filter(estudio => estudio !== null);  
               });
 
         }
