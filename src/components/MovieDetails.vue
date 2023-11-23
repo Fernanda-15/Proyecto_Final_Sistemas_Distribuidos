@@ -51,7 +51,7 @@
     
     export default {
       name: "Datos de la Pelicula",
-      props: ['show','edit','create'],
+      props: ['edit','create'],
       data() {
         return {
           title: "Datos de la pelicula",
@@ -73,7 +73,7 @@
           })
               .then((response) => response.json())
               .then((result) => {
-                  this.movie_n = this.movie_n = +result.movie_N + 1;
+                  this.movie_n = +result.movie_N + 1;
                   this.movie = {
                   'id': 'movie_'+this.movie_n,'title':'','sinopsis':'',
                   'director':0,'estudio':0,'image':'','ano_lanzamiento':0};

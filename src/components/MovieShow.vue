@@ -45,21 +45,12 @@ export default {
   data() {
     return {
       title: "Detalles de la pelicula",
-      movie: {},
-      director: [],
-      estudio: [],
+      movie: {}
     }
   },
   mounted() {
     const route = useRoute()
-    if (route.params.id != null)
-      this.findMovie(route.params.id);
-    else {
-      this.movie = {
-        'id': 'movie_' + Math.floor(Math.random() * 100000000), 'title': '', 'sinopsis': '',
-        'director': 0, 'estudio': 0, 'image': '', 'ano_lanzamiento': 0
-      };
-    }
+    this.findMovie(route.params.id);
   },
   methods: {
     findMovie: function (id) {

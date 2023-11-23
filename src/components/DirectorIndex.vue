@@ -45,7 +45,7 @@ export default {
           { headers: {'Accept': 'application/json'}})
           .then((response) => response.json())
           .then((items) => {
-            this.directores = items;
+            this.directores = items.filter(director => director !== null);
           })
           .catch((error) => console.error(error));
        },
